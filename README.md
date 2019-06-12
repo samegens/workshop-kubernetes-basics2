@@ -1,2 +1,14 @@
-# workshop-kubernetes-basics2
-Manifests voor deel 2 van de Workshop Kubernetes
+# Manifests voor de Workshop Kubernetes basics deel 2
+
+Dit zijn de manifest files die gebruikt zijn tijdens de workshop. De volgorde is:
+1. [base](base)
+2. [res](res) (resources)
+3. [hpa](hpa) (Horizontal Pod Autoscaler)
+4. [volumes](volumes) (Volumes)
+5. [pv](pv) (Persistent Volumes & Persistent Volume Claims)
+6. [config](config) (ConfigMap)
+7. [secret](secret) (Secret)
+
+Om de resources uit te rollen:
+
+    kubectl apply -f <path to yml> --record
