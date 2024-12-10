@@ -1,7 +1,8 @@
 # Manifests voor de Workshop Kubernetes basics deel 2
 
 Dit zijn de manifest files die gebruikt zijn tijdens de workshop. De volgorde is:
-1. [base](base)
+
+1. [base](base), einde van [basics deel 1](https://github.com/samegens/workshop-kubernetes-basics2)
 2. [res](res) (resources)
 3. [hpa](hpa) (Horizontal Pod Autoscaler)
 4. [volumes](volumes) (Volumes)
