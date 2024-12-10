@@ -3,6 +3,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kuard
+  annotations:
+    origin/manifest-path: base/kuard.yml
+    kubernetes.io/change-cause: Initial apply
 spec:
   replicas: 3
   selector:
@@ -28,6 +31,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: kuard
+  annotations:
+    origin/manifest-path: base/kuard.yml
+    kubernetes.io/change-cause: Initial apply
 spec:
   type: NodePort
   ports:
@@ -43,6 +49,8 @@ metadata:
   name: kuard
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    origin/manifest-path: base/kuard.yml
+    kubernetes.io/change-cause: Initial apply
 spec:
   ingressClassName: nginx
   rules:

@@ -12,4 +12,4 @@ Dit zijn de manifest files die gebruikt zijn tijdens de workshop. De volgorde is
 
 Om de resources uit te rollen:
 
-    kubectl apply -f <path to yml> --record
+    kubectl apply -f <path to yml>
