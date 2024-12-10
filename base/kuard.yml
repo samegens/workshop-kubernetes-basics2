@@ -37,19 +37,22 @@ spec:
   selector:
     app: kuard
 ---
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: kuard
   annotations:
-    ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
+  ingressClassName: nginx
   rules:
   - host: kuard.local
     http:
       paths:
       - path: /
+        pathType: Prefix
         backend:
-          serviceName: kuard
-          servicePort: 8080
+          service:
+            name: kuard
+            port:
+              number: 8080
