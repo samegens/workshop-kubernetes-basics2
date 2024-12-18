@@ -13,6 +13,9 @@ spec:
       app: kuard
   template:
     metadata:
+      annotations:
+        origin/manifest-path: hpa/kuard.yml
+        kubernetes.io/change-cause: Initial apply
       labels:
         app: kuard
     spec:
@@ -42,10 +45,10 @@ metadata:
     origin/manifest-path: hpa/kuard.yml
     kubernetes.io/change-cause: Initial apply
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
   - port: 8080
-    nodePort: 30000
+    targetPort: 8080
     protocol: TCP
   selector:
     app: kuard
