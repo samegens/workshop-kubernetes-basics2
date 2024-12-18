@@ -13,6 +13,9 @@ spec:
       app: kuard
   template:
     metadata:
+      annotations:
+        origin/manifest-path: base/kuard.yml
+        kubernetes.io/change-cause: Initial apply
       labels:
         app: kuard
     spec:
