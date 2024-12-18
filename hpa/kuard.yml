@@ -105,3 +105,16 @@ spec:
       target:
         type: Utilization
         averageUtilization: 50
+  behavior:
+    scaleUp:
+      stabilizationWindowSeconds: 5
+      policies:
+      - type: Pods
+        value: 2
+        periodSeconds: 5
+    scaleDown:
+      stabilizationWindowSeconds: 5
+      policies:
+      - type: Pods
+        value: 2
+        periodSeconds: 5
