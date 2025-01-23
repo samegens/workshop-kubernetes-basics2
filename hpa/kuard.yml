@@ -5,7 +5,6 @@ metadata:
   name: kuard
   annotations:
     origin/manifest-path: hpa/kuard.yml
-    kubernetes.io/change-cause: Initial apply
 spec:
   replicas: 1
   selector:
@@ -15,7 +14,6 @@ spec:
     metadata:
       annotations:
         origin/manifest-path: hpa/kuard.yml
-        kubernetes.io/change-cause: Initial apply
       labels:
         app: kuard
     spec:
@@ -52,7 +50,6 @@ metadata:
   name: kuard
   annotations:
     origin/manifest-path: hpa/kuard.yml
-    kubernetes.io/change-cause: Initial apply
 spec:
   type: ClusterIP
   ports:
@@ -69,7 +66,6 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     origin/manifest-path: hpa/kuard.yml
-    kubernetes.io/change-cause: Initial apply
 spec:
   ingressClassName: nginx
   rules:
@@ -90,7 +86,6 @@ metadata:
   name: kuard
   annotations:
     origin/manifest-path: hpa/kuard.yml
-    kubernetes.io/change-cause: Initial apply
 spec:
   minReplicas: 1
   maxReplicas: 10

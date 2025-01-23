@@ -10,7 +10,7 @@ spec:
   capacity:
     storage: 2Gi
   hostPath:
-    path: /home/docker
+    path: /workshop
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -65,16 +65,11 @@ spec:
             memory: 100Mi
             cpu: "0.1"
         volumeMounts:
-        - mountPath: /src
-          name: github-volume
         - mountPath: /mnt
           name: hostpath-volume
         - mountPath: /cache
           name: emptydir-volume
       volumes:
-      - name: github-volume
-        gitRepo:
-          repository: https://github.com/kubernetes-up-and-running/kuard
       - name: hostpath-volume
         persistentVolumeClaim:
           claimName: hostpath-pvc
@@ -101,7 +96,6 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     origin/manifest-path: pv/kuard.yml
-    kubernetes.io/change-cause: Initial apply
 spec:
   ingressClassName: nginx
   rules:

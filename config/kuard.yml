@@ -93,7 +93,6 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     origin/manifest-path: config/kuard.yml
-    kubernetes.io/change-cause: Initial apply
 spec:
   ingressClassName: nginx
   rules:
