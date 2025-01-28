@@ -1,5 +1,7 @@
 # Manifests voor de Workshop Kubernetes basics deel 2
 
+## Voordat je begint
+
 Installeer eerst [Ingress Nginx](https://kubernetes.github.io/ingress-nginx/deploy/) en
 [Metrics Server](https://github.com/kubernetes-sigs/metrics-server):
 
@@ -7,6 +9,15 @@ Installeer eerst [Ingress Nginx](https://kubernetes.github.io/ingress-nginx/depl
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.12.0/deploy/static/provider/cloud/deploy.yaml
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 ```
+
+Maak ook een aantal entries in je hosts file aan:
+
+``` hosts
+127.0.0.1 kuard.local
+127.0.0.1 nginx.local
+```
+
+## Manifests
 
 Deze repo bevat de manifest files die gebruikt zijn tijdens de workshop. De volgorde is:
 
