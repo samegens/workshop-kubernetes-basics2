@@ -29,6 +29,7 @@ Deze repo bevat de manifest files die gebruikt zijn tijdens de workshop. De volg
 6. [config](config) (ConfigMap)
 7. [secret](secret) (Secret)
 8. [Helm](helm)
+9. [Kubernetes Dashboard](dashboard)
 
 Om de resources uit te rollen:
 
