@@ -67,7 +67,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     origin/manifest-path: res/kuard.yml
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   rules:
     - host: kuard.local
       http:

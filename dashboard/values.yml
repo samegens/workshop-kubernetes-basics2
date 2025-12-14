@@ -4,7 +4,7 @@ service:
 ingress:
   enabled: true
   hostname: dashboard.local
-  ingressClassName: nginx
+  ingressClassName: traefik
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "false"

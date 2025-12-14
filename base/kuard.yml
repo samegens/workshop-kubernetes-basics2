@@ -60,7 +60,8 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     origin/manifest-path: base/kuard.yml
 spec:
-  ingressClassName: nginx
+  # Change this to nginx for the ingress addon for minikube:
+  ingressClassName: traefik
   rules:
     - host: kuard.local
       http:
