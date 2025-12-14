@@ -3,8 +3,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kuard
-  annotations:
-    origin/manifest-path: hpa/kuard.yml
 spec:
   replicas: 1
   selector:
@@ -12,8 +10,6 @@ spec:
       app: kuard
   template:
     metadata:
-      annotations:
-        origin/manifest-path: hpa/kuard.yml
       labels:
         app: kuard
     spec:
@@ -48,8 +44,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: kuard
-  annotations:
-    origin/manifest-path: hpa/kuard.yml
 spec:
   type: ClusterIP
   ports:
@@ -63,9 +57,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: kuard
-  annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    origin/manifest-path: hpa/kuard.yml
 spec:
   ingressClassName: traefik
   rules:
@@ -84,8 +75,6 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: kuard
-  annotations:
-    origin/manifest-path: hpa/kuard.yml
 spec:
   minReplicas: 1
   maxReplicas: 10
